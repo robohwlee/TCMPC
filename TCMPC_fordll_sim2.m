@@ -1,10 +1,12 @@
+function [opt1, opt2] = TCMPC_fordll_sim2(ipt1,ipt2)
+
 % point stabilization + Multiple shooting + Runge Kutta
-clear all
-close all
-clc
+% clear all
+% close all
+% clc
 
 % CasADi v3.5.5
-addpath('C:\Users\hw\TCMPC\casadi')
+% addpath('C:\Users\hw\TCMPC\casadi')
 import casadi.*
 
 h = 0.1; %[s]
@@ -131,5 +133,10 @@ main_loop_time = toc(main_loop);
 ss_error = norm((x0-xs),2)
 average_mpc_time = main_loop_time/(mpciter+1)
 
-Draw_MPC_point_stabilization_v1 (t,xx,xx1,u_cl,xs,N,rob_diam)
+% Draw_MPC_point_stabilization_v1 (t,xx,xx1,u_cl,xs,N,rob_diam)
+
+opt1 = ipt1;
+opt2 = ipt2;
+
+end
 
